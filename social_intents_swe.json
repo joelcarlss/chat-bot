@@ -1,7 +1,7 @@
 {
   "intents": [
         {"tag": "greeting",
-         "patterns": ["Hej", "Är det någon där?", "Tjena", "God dag", "Tjo", "Tja"],
+         "patterns": ["Hej", "Är det någon där?", "Tjena", "God dag", "Tjo", "Tja", "Hejsan"],
          "responses": ["Hej! Hur kan jag hjälpa dig?", "Hejsan, kan jag vara till hjälp?", "Hej på dig!"],
          "context_set": ""
         },
@@ -18,7 +18,7 @@
          "responses": ["Inga problem!", "Kul att kan hjälpa till!", "Så lite så"]
         },
         {"tag": "about",
-         "patterns": ["Vem är du?", "Berätta om du själv"],
+         "patterns": ["Vem är du?", "Berätta om dig själv"],
          "responses": ["Inga problem!", "Kul att kan hjälpa till!", "Så lite så"]
         }
   ]
