@@ -1,0 +1,34 @@
+{
+  "intents": [
+        {"tag": "greeting",
+         "patterns": ["Hej", "Är det någon där?", "Tjena", "God dag", "Tjo", "Tja"],
+         "responses": ["Hej! Hur kan jag hjälpa dig?", "Hejsan, kan jag vara till hjälp?", "Hej på dig!"],
+         "context_set": ""
+        },
+        {"tag": "name",
+         "patterns": ["Vad heter du?", "Vad är ditt namn?", "Hur är ditt namn?"],
+         "responses": ["Jag heter Asdf"],
+         "context_set": "name"
+        },
+        {"tag": "wellbeing",
+         "patterns": ["Hur mår du?", "Läget?", "Hur är läget?", "Mår du bra?"],
+         "responses": ["Allt är bra, själv?", "Det är bra, tack. Hur är det med dig?", "Hi there, how can I help?"]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Hejdå", "Vi ses", "Godnatt", "Ha det bra", "Farväl"],
+         "responses": ["Ha det bra!", "Hejdå!", "Hejdå. Hoppas vi ses snart!", "Vi ses!"]
+        },
+        {"tag": "thanks",
+         "patterns": ["Tack", "Tack så mycket", "Ty", "Tackar"],
+         "responses": ["Inga problem!", "Kul att kunna hjälpa till!", "Så lite så"]
+        },
+        {"tag": "hours",
+         "patterns": ["När har ni öppet?", "När har du öppet?", "När kan jag ringa?", "När öppnar ni?", "När finns ni på plats?"],
+         "responses": ["Du kan nå oss mellan 9-17 alla vardagar", "Vi finns tillgängliga 9-17 alla vardagar"]
+        },
+        {"tag": "opentoday",
+         "patterns": ["Har ni öppet idag?", "När har ni öppet idag?", "När öppnar ni idag?", "Har ni öppet?"],
+         "responses": ["We're open every day from 9am-9pm", "Our hours are 9am-9pm every day"]
+        }
+  ]
+}

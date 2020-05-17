@@ -1,0 +1,25 @@
+{
+  "intents": [
+        {"tag": "greeting",
+         "patterns": ["Hej", "Är det någon där?", "Tjena", "God dag", "Tjo", "Tja"],
+         "responses": ["Hej! Hur kan jag hjälpa dig?", "Hejsan, kan jag vara till hjälp?", "Hej på dig!"],
+         "context_set": ""
+        },
+        {"tag": "wellbeing",
+         "patterns": ["Hur mår du?", "Läget?", "Hur är läget?", "Mår du bra?"],
+         "responses": ["Allt är bra, själv?", "Det är bra, tack. Hur är det med dig?", "Hi there, how can I help?"]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Hejdå", "Vi ses", "Godnatt", "Ha det bra", "Farväl"],
+         "responses": ["Ha det bra!", "Hejdå!", "Hejdå. Hoppas vi ses snart!", "Vi ses!"]
+        },
+        {"tag": "thanks",
+         "patterns": ["Tack", "Tack så mycket", "Ty", "Tackar"],
+         "responses": ["Inga problem!", "Kul att kan hjälpa till!", "Så lite så"]
+        },
+        {"tag": "about",
+         "patterns": ["Vem är du?", "Berätta om du själv"],
+         "responses": ["Inga problem!", "Kul att kan hjälpa till!", "Så lite så"]
+        }
+  ]
+}
