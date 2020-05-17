@@ -1,8 +1,5 @@
 import nltk
 from nltk.stem.lancaster import LancasterStemmer
-stemmer = LancasterStemmer()
-# nltk.download('punkt')
-
 import numpy
 import tensorflow as tf
 import tflearn
@@ -10,16 +7,19 @@ import random
 import json
 import pickle
 
+stemmer = LancasterStemmer()
+# nltk.download('punkt')
+
+
+
 # https://techwithtim.net/tutorials/ai-chatbot/part-1/
 
-with open('new_intents.json') as file:
+with open('newintents.json') as file:
     data = json.load(file)
 
 try:
     with open('data.pickle', 'rb') as f:
         words, labels, training, output = pickle.load(f)
-
-# Train
 except:
     words = []
     labels = []
@@ -80,13 +80,11 @@ net = tflearn.regression(net)
 model = tflearn.DNN(net)
 
 # Comment out load part when training new data
-try:
-    model.load('model.tflearn')
+model.load('model.tflearn')
 
-except:
-    model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
-    model.save('model.tflearn')
-
+# Comment out two lines below if not training
+# model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
+# model.save('model.tflearn')
 
 def bag_of_words(s, words):
     bag = [0 for _ in range(len(words))]
@@ -125,4 +123,4 @@ def chat():
             print('Sorry, try again')
 
 
-# chat()
+chat()
