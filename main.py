@@ -14,13 +14,13 @@ stemmer = LancasterStemmer()
 
 # https://techwithtim.net/tutorials/ai-chatbot/part-1/
 
-with open('newintents.json') as file:
-    data = json.load(file)
 
-try:
+def get_existing_model():
     with open('data.pickle', 'rb') as f:
-        words, labels, training, output = pickle.load(f)
-except:
+        return pickle.load(f)
+
+
+def create_trainable_data(data):
     words = []
     labels = []
     docs_x = []
@@ -69,22 +69,42 @@ except:
     with open('data.pickle', 'wb') as f:
         pickle.dump((words, labels, training, output), f)
 
-tf.reset_default_graph()
 
-net = tflearn.input_data(shape=[None, len(training[0])])
-net = tflearn.fully_connected(net, 8)
-net = tflearn.fully_connected(net, 8)
-net = tflearn.fully_connected(net, len(output[0]), activation='softmax')
-net = tflearn.regression(net)
+def create_dnn(training, output):
+    tf.reset_default_graph()
 
-model = tflearn.DNN(net)
+    net = tflearn.input_data(shape=[None, len(training[0])])
+    net = tflearn.fully_connected(net, 8)
+    net = tflearn.fully_connected(net, 8)
+    net = tflearn.fully_connected(net, len(output[0]), activation='softmax')
+    net = tflearn.regression(net)
 
-# Comment out load part when training new data
-model.load('model.tflearn')
+    model = tflearn.DNN(net)
+    return model
 
-# Comment out two lines below if not training
-# model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
-# model.save('model.tflearn')
+
+def run():
+    with open('newintents.json') as file:
+        data = json.load(file)
+
+    words, labels, training, output = get_existing_model()
+    model = create_dnn(training, output)
+    # Comment out load part when training new data
+    model.load('model.tflearn')
+    chat(model, words, labels, data)
+
+
+def train():
+    with open('newintents.json') as file:
+        data = json.load(file)
+
+    words, labels, training, output = get_existing_model()
+    model = create_dnn(training)
+    # Comment out two lines below if not training
+    create_trainable_data(data, output)
+    model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
+    model.save('model.tflearn')
+
 
 def bag_of_words(s, words):
     bag = [0 for _ in range(len(words))]
@@ -99,7 +119,7 @@ def bag_of_words(s, words):
     return numpy.array(bag)
 
 
-def chat():
+def chat(model, words, labels, data):
     print('Start talking')
     while True:
         inp = input('You: ')
@@ -123,4 +143,4 @@ def chat():
             print('Sorry, try again')
 
 
-chat()
+run()

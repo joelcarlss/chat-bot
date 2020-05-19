@@ -79,7 +79,7 @@
          "responses": ["Vi utvecklar webbsidor, webbappar, mobilappar och system, samt hyr ut konsulter för liknande ändamål"]
         },
         {"tag": "codeskills",
-         "patterns": ["Vilka språk kan ni", "vilka språk är ni bäst på", "vilka ramverk kan ni", "vad kan ni för språk", "vad kan ni för programmeringsspråk",
+         "patterns": ["Vilka språk kan ni", "vilka språk är ni bäst på", "vilka ramverk kan ni", "vad kan ni för språk", "vad kan ni för programmeringsspråk", "vilka tekniker kan ni",
          "har ni någon som kan javascript", "har ni någon som kan node", "har ni någon som kan node.js", "har ni någon som kan java", "har ni någon som kan python", "har ni någon som kan flutter", "har ni någon som kan react",
            "kan någon react", "kan någon javascript", "kan någon sql", "kan någon node", "kan någon node.js", "kan någon python", "kan någon java", "kan någon mongoDB", "kan någon graphql", "kan någon graph ql", "kan någon flutter",
            "kan någon av er reactnative", "kan någon av er react native", "kan någon av er flutter", "kan någon av er js", "kan någon av er javascript", "kan någon av er python", "kan någon av er databaser", "kan någon av er relationsdatabaser", "kan någon av er python",
