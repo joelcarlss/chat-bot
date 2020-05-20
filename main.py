@@ -37,6 +37,7 @@ def create_trainable_data(data):
             labels.append(intent['tag'])
 
     words = [stemmer.stem(w.lower()) for w in words if w != '?']
+    print(words)
     words = sorted(list(set(words)))
 
     labels = sorted(labels)
@@ -99,9 +100,9 @@ def train():
         data = json.load(file)
 
     words, labels, training, output = get_existing_model()
-    model = create_dnn(training)
+    model = create_dnn(training, output)
     # Comment out two lines below if not training
-    create_trainable_data(data, output)
+    create_trainable_data(data)
     model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
     model.save('model.tflearn')
 
@@ -143,4 +144,4 @@ def chat(model, words, labels, data):
             print('Sorry, try again')
 
 
-run()
+train()
