@@ -2,53 +2,65 @@
   "intents": [
         {"tag": "greeting",
          "patterns": ["Hej", "Är det någon där?", "Tjena", "God dag", "Tjo", "Tja"],
-         "responses": ["Hej! Hur kan jag hjälpa dig?", "Hejsan, kan jag vara till hjälp?", "Hej på dig!"],
+          "responses": ["Hej! Hur kan jag hjälpa dig?", "Hejsan, kan jag vara till hjälp?", "Hej på dig!"],
+          "type": "question",
          "context_set": ""
         },
         {"tag": "name",
          "patterns": ["Vad heter du?", "Vad är ditt namn?", "Hur är ditt namn?", "bad heter du?"],
          "responses": ["Jag heter Flowbot", "Jag är Flowbot"],
+          "type": "question",
          "context_set": "name"
         },
         {"tag": "wellbeing",
          "patterns": ["Hur mår du?", "Läget?", "Hur är läget?", "Mår du bra?"],
-         "responses": ["Allt är bra, själv?", "Det är bra, tack. Hur är det med dig?", "Hi there, how can I help?"]
+         "responses": ["Allt är bra, själv?", "Det är bra, tack. Hur är det med dig?", "Hi there, how can I help?"],
+          "type": "question"
         },
         {"tag": "responsewellbeing",
          "patterns": ["Jag mår bra", "det är bra", "bara bra tack", "det är fint", "bara bra"],
-         "responses": ["Härligt att höra", "Vad bra!", "Så bra!"]
+         "responses": ["Härligt att höra", "Vad bra!", "Så bra!"],
+          "type": "question"
         },
         {"tag": "goodbye",
          "patterns": ["Hejdå", "Vi ses", "Godnatt", "Ha det bra", "Farväl", "hej då"],
-         "responses": ["Ha det bra!", "Hejdå!", "Hejdå. Hoppas vi ses snart!", "Vi ses!"]
+         "responses": ["Ha det bra!", "Hejdå!", "Hejdå. Hoppas vi ses snart!", "Vi ses!"],
+          "type": "question"
         },
         {"tag": "thanks",
          "patterns": ["Tack", "Tack så mycket", "Ty", "Tackar"],
-         "responses": ["Inga problem!", "Kul att få hjälpa till!", "Så lite så", "Tack själv!"]
+         "responses": ["Inga problem!", "Kul att få hjälpa till!", "Så lite så", "Tack själv!"],
+          "type": "question"
         },
         {"tag": "aboutbot",
          "patterns": ["Vem är du?", "Berätta om dig själv"],
-         "responses": ["Jag är Flowbot! Jag är ett neural-network som är byggd i python. Jag har är ganska ny på jobbet så det är inte säkert att jag kan lösa allt, men jag gör så gott jag kan"]
+         "responses": ["Jag är Flowbot! Jag är ett neural-network som är byggd i python. Jag har är ganska ny på jobbet så det är inte säkert att jag kan lösa allt, men jag gör så gott jag kan"],
+          "type": "question"
         },
         {"tag": "meancomments",
          "patterns": ["Du är dum", "vad dålig du är", "Håll käften", "tönt", "du kan fan inget", "idiot", "bajskorv", "du är värdelös", "jag hatar dig"],
-         "responses": ["Aj...", ":(", "Bara för att jag är inte är människa, betyder inte det att jag inte har känslor"]
+         "responses": ["Aj...", ":(", "Bara för att jag är inte är människa, betyder inte det att jag inte har känslor"],
+          "type": "statement"
         },
         {"tag": "stop",
          "patterns": [""],
-         "responses": [""]
+         "responses": [""],
+          "type": "statement"
         },
         {"tag": "botcando",
          "patterns": ["vad kan du", "vad kan du göra", "vad kan jag fråga dig", "berätta vad du kan"],
-         "responses": ["Jag kan berätta om mig själv och Flowbic. Jag kan svara på frågor om vad Flowbic gör och vad vi kan."]
+         "responses": ["Jag kan berätta om mig själv och Flowbic. Jag kan svara på frågor om vad Flowbic gör och vad vi kan."],
+          "type": "question"
         },
         {"tag": "hours",
          "patterns": ["När har ni öppet?", "När har du öppet?", "När kan jag ringa?", "När öppnar ni?", "När finns ni på plats?"],
-         "responses": ["Du kan nå oss mellan 9-17 alla vardagar", "Vi finns tillgängliga 9-17 alla vardagar"]
+         "responses": ["Du kan nå oss mellan 9-17 alla vardagar", "Vi finns tillgängliga 9-17 alla vardagar"],
+          "type": "question"
         },
         {"tag": "opentoday",
          "patterns": ["Har ni öppet idag?", "När har ni öppet idag?", "När öppnar ni idag?", "Har ni öppet?"],
-         "responses": ["Du kan nå oss mellan 9-17 alla vardagar", "Vi finns tillgängliga 9-17 alla vardagar"]
+         "responses": ["Du kan nå oss mellan 9-17 alla vardagar", "Vi finns tillgängliga 9-17 alla vardagar"],
+          "type": "question"
         },
         {"tag": "contact",
          "patterns": ["Hur når vi er?", "Hur kan jag nå er?", "Vad har ni för telefonnummer?", "Kan jag få flowbics telefonnummer",
@@ -56,27 +68,33 @@
            "Vad har ni för epost?", "Vad har ni för email", "vad har ni för mail", "vad har ni för mailadress",
          "Kan jag få era kontaktuppgifter", "hur kontaktar jag er", "hur kontaktar vi er", "hur får vi tag på er", "Vart hör jag av mig",
          "kontakt","telefonnummer", "telefon", "mail", "epost", "email", "mailaddress", "adress"],
-         "responses": ["Du når oss på telefon: 073-6100229 \n Epost: kontakt@flowbic.se \n Eller via kontaktformuläret på https://flowbic.se"]
+         "responses": ["Du når oss på telefon: 073-6100229 \n Epost: kontakt@flowbic.se \n Eller via kontaktformuläret på https://flowbic.se"],
+          "type": "question"
         },
         {"tag": "help",
          "patterns": [""],
-         "responses": [""]
+         "responses": [""],
+          "type": "question"
         },
         {"tag": "employees",
          "patterns": ["Hur många jobbar på flowbic", "hur många konsulter har ni", "hur många anställda har ni", "hur många konsulter kan ni hyra ut"],
-         "responses": ["Det finns fem personer som jobbar på flowbic. Alla fem har samma utbildning och liknande kunskaper.", "Flowbic består av fem personer. David, Joel, Carl, Karl och Macke. Alla har samma utbildning och liknande kunskaper"]
+         "responses": ["Det finns fem personer som jobbar på flowbic. Alla fem har samma utbildning och liknande kunskaper.", "Flowbic består av fem personer. David, Joel, Carl, Karl och Macke. Alla har samma utbildning och liknande kunskaper"],
+          "type": "question"
         },
         {"tag": "aboutcompany",
          "patterns": ["Vilka är ni?", "berätta om vilka ni är", "vilka är flowbic", "vad har ni för bakgrund", "berätta om flowbic", "flowbic"],
-         "responses": ["Flowbic består av Carl, Joel, David, Marcus och Karl, som träffades på universitetet i Kalmar där de alla gick samma utbildning för att bli webbprogrammerare. De alla kom väldigt bra överrens och tack vare gott samarbete och många goda skratt, gick de igenom utbildningen med en klackspark. Att splitra gänget efter universitetet, kändes som en dålig idé och därför skapade de aktiebolaget Flowbic. På Flowbic kan gänget göra det som de tycker är roligast och är bäst på, nämligen programmera system, appar, webbsidor och konsulta företag"]
+         "responses": ["Flowbic består av Carl, Joel, David, Marcus och Karl, som träffades på universitetet i Kalmar där de alla gick samma utbildning för att bli webbprogrammerare. De alla kom väldigt bra överrens och tack vare gott samarbete och många goda skratt, gick de igenom utbildningen med en klackspark. Att splitra gänget efter universitetet, kändes som en dålig idé och därför skapade de aktiebolaget Flowbic. På Flowbic kan gänget göra det som de tycker är roligast och är bäst på, nämligen programmera system, appar, webbsidor och konsulta företag"],
+          "type": "question"
         },
         {"tag": "whatwecan",
          "patterns": ["Vad kan ni", "vad är ni bra på", "vilka verktyg använder ni", "vad kan ni göra", "vad har ni för kunskaper", "vad kan dom", "vad kan flowbic"],
-         "responses": ["Vi har kunskaper inom att utveckla Mobilappar, webAPI, webservrar, webbsidor, webbappar, Maskinlärning och Internet of Things. Vi har utvecklat bland annat tidsrapporteringssystem, betygsystem, shoppinglistor för mobilen, chat applikationer, kartor och tracking för dator och mobil, bildigenkänningssystem, hemsidor som vår egen och mycket mycket mer. Vi kan JavaScript, Node.js, React, ReactNative, Flutter, Python, SQL, Java, C#, HTML/CSS, UML och mycket mer"]
+         "responses": ["Vi har kunskaper inom att utveckla Mobilappar, webAPI, webservrar, webbsidor, webbappar, Maskinlärning och Internet of Things. Vi har utvecklat bland annat tidsrapporteringssystem, betygsystem, shoppinglistor för mobilen, chat applikationer, kartor och tracking för dator och mobil, bildigenkänningssystem, hemsidor som vår egen och mycket mycket mer. Vi kan JavaScript, Node.js, React, ReactNative, Flutter, Python, SQL, Java, C#, HTML/CSS, UML och mycket mer"],
+          "type": "question"
         },
         {"tag": "services",
          "patterns": ["Vad gör ni", "vad erbjuder ni för tjänster"],
-         "responses": ["Vi utvecklar webbsidor, webbappar, mobilappar och system, samt hyr ut konsulter för liknande ändamål"]
+         "responses": ["Vi utvecklar webbsidor, webbappar, mobilappar och system, samt hyr ut konsulter för liknande ändamål"],
+          "type": "question"
         },
         {"tag": "codeskills",
          "patterns": ["Vilka språk kan ni", "vilka språk är ni bäst på", "vilka ramverk kan ni", "vad kan ni för språk", "vad kan ni för programmeringsspråk", "vilka tekniker kan ni",
@@ -85,12 +103,14 @@
            "kan någon av er reactnative", "kan någon av er react native", "kan någon av er flutter", "kan någon av er js", "kan någon av er javascript", "kan någon av er python", "kan någon av er databaser", "kan någon av er relationsdatabaser", "kan någon av er python",
            "kan ni javascript", "kan ni node", "kan ni express", "kan ni java", "kan ni C#", "vi söker någon som kan C#", "vi söker någon som kan react" , "vi söker någon som kan flutter", "vi söker någon som kan databaser",
            "är ni bra på javascript"],
-         "responses": ["Vi är allra bäst på Javascript(Vanilla, React, ReactNative, mm) Node.js(Restify, express). Vi kan också Python, Dart(Flutter), C#, Java, SQL, MongoDB och mycket mer"]
+         "responses": ["Vi är allra bäst på Javascript(Vanilla, React, ReactNative, mm) Node.js(Restify, express). Vi kan också Python, Dart(Flutter), C#, Java, SQL, MongoDB och mycket mer"],
+          "type": "question"
         },
         {"tag": "webbpages",
          "patterns": ["Kan ni göra en hemsida", "utveckla hemsida åt oss", "kan ni utveckla vår hemsida", "är ni bra på hemsidor", "är ni bra på hemsidor till företag",
          "kan ni göra företagshemsidor", "vi behöver göra en hemsida", "kan ni göra en webbsida"],
-         "responses": ["Vi gör gärna webbsidor! Kontakta oss så kan vi komma med ett prisförslag.", "Vi är bra på att utveckla hemsidor! Hör av dig till oss så får du veta mer."]
+         "responses": ["Vi gör gärna webbsidor! Kontakta oss så kan vi komma med ett prisförslag.", "Vi är bra på att utveckla hemsidor! Hör av dig till oss så får du veta mer."],
+          "type": "question"
         },
         {"tag": "mobileapp",
          "patterns": ["Jag vill göra en mobilapp", "vi vill göra en mobilapp", "vi vill göra en app till mobilen", "jag behöver en app till mobilen",
@@ -99,49 +119,64 @@
          "kan ni göra appar", "kan ni göra appar till iPhone", "kan ni göra appar till android", "vi behöver en app till android", "vi behöver en app till iphone", "kan ni utveckla till android",
          "kan ni utveckla till iphone", "kan ni utveckla mobilappar till cross platform", "kan ni utveckla mobilappar till crossplatform", "kan ni göra appar till iphone och android",
            "kan ni utveckla till ios", "kan ni apputveckling till ios"],
-         "responses": ["Vi är bra på att utveckla mobilappar. Vi kan utveckla till både iOS och Android. När vi utvecklar använder vi gärna Flutter eller ReactNative, så att vi kan utveckla crossplatform till både iOS och Android samtidigt."]
+         "responses": ["Vi är bra på att utveckla mobilappar. Vi kan utveckla till både iOS och Android. När vi utvecklar använder vi gärna Flutter eller ReactNative, så att vi kan utveckla crossplatform till både iOS och Android samtidigt."],
+          "type": "question"
         },
         {"tag": "system",
          "patterns": ["Vi vill utveckla ett tidsrapporteringssystem", "vi vill bygga en ny sociala medieplattform", "Kan ni utveckla kartor", "vi vill utveckla ett intranät", "kan ni utveckla intranät för företag"],
-         "responses": ["Vi gör gärna system och webbaplikationer. Hör av er så kollar vi mer noggrant på vad ni behöver!"]
+         "responses": ["Vi gör gärna system och webbaplikationer. Hör av er så kollar vi mer noggrant på vad ni behöver!"],
+          "type": "question"
         },
         {"tag": "pricehour",
          "patterns": ["Vad kostar ni som konsulter", "vad har ni för pris per timme", "vad kostar ni i timmen", "vad kostar ni per timme", "vad tar ni i timmen", "vad tar ni per timme",
          "vad har ni för konsultpris", "vad tar ni för att konsulta", "vad kostar det att anlita er", "vad är priset för att anlita er", "vad är priset för att anlita er som konsulter",
          "vad kostar det att ha er som konsulter"],
-         "responses": ["Eftersom vi är ett nystartat företag försöker vi vara billiga. Vi vill huvudsakligen satsa på att bygga en portfolio. Kontakta oss så får du ett prisförslag"]
+         "responses": ["Eftersom vi är ett nystartat företag försöker vi vara billiga. Vi vill huvudsakligen satsa på att bygga en portfolio. Kontakta oss så får du ett prisförslag"],
+          "type": "question"
         },
         {"tag": "pricesystem",
          "patterns": ["vad kostar det att utveckla en hemsida", "vad kostar det att bygga en app", "vad kostar det att göra en hemsida", "vad kostar det att göra en app",
          "vad kostar det att göra en webbsida", "vad tar ni för att göra en webbsida till ett företag", "vad tar ni för att göra en företagshemsida", "vad kostar en webbapp",
          "hur mycket kostar en mobilapp", "hur mycket kostar en app", "hur mycket kostar en hemsida", "hur mycket kostar ett system", "vad har ni för pris för en hemsida"],
-         "responses": ["Kontakta oss för mer information om vad det kostar att utveckla en plattform. Eftersom vi är nya försöker vi vara ganska billiga ;)"]
+         "responses": ["Kontakta oss för mer information om vad det kostar att utveckla en plattform. Eftersom vi är nya försöker vi vara ganska billiga ;)"],
+          "type": "question"
         },
         {"tag": "consultant",
          "patterns": ["vi behöver en konsult", "vi söker konsulter", "vi vill ha er som konsult", "kan ni ta konsultuppdrag", "tar ni konsultuppdrag",
          "vi behöver en programmerare", "vi behöver hyra en programmerare", "vi behöver utvecklare", "vi behöver programmerare till ett projekt", "vi behöver utvecklare till ett projekt", "Kan man hyra er som konsulter"],
-         "responses": ["Vi tar alla fem konsultuppdrag! Hör av dig så kollar vi vem som är bäst till det ni behöver", "Vi tar gärna konsultuppdrag! Hör av dig så kikar vi på vem som är bäst lämpad för ert jobb"]
+         "responses": ["Vi tar alla fem konsultuppdrag! Hör av dig så kollar vi vem som är bäst till det ni behöver", "Vi tar gärna konsultuppdrag! Hör av dig så kikar vi på vem som är bäst lämpad för ert jobb"],
+          "type": "question"
         },
         {"tag": "joel",
          "patterns": ["berätta mer om joel", "vem är joel", "joel", "berätta om joel", "vad gör joel"],
-         "responses": ["Joel är från en lite liten by, några mil utanför Växjö. Han har tidigare jobbat inom försäljning och grafisk produktion. Joel flyttade till Kalmar när han skulle börja plugga. Joel trivs väldigt bra i Kalmar och han verkar bli kvar i Kalmar"]
+         "responses": ["Joel är från en lite liten by, några mil utanför Växjö. Han har tidigare jobbat inom försäljning och grafisk produktion. Joel flyttade till Kalmar när han skulle börja plugga. Joel trivs väldigt bra i Kalmar och han verkar bli kvar i Kalmar"],
+          "type": "question"
         },
         {"tag": "david",
          "patterns": ["berätta mer om david", "vem är david", "david", "berätta om david", "vad gör david"],
-         "responses": ["Storyn om daves"]
+         "responses": ["Storyn om daves"],
+          "type": "question"
         },
         {"tag": "karl",
          "patterns": ["berätta mer om karl", "vem är karl", "karl", "berätta om karl", "vad gör karl"],
-         "responses": ["storyn om karl"]
+         "responses": ["storyn om karl"],
+          "type": "question"
         },
         {"tag": "carl",
          "patterns": ["berätta mer om carl", "vem är carl", "joel", "berätta om carl", "vad gör carl"],
-         "responses": ["storyn om carl"]
+         "responses": ["storyn om carl"],
+          "type": "question"
         },
         {"tag": "marcus",
          "patterns": ["berätta mer om marcus", "vem är marcus", "marcus", "berätta om marcus", "vad gör marcus",
            "berätta mer om macke", "vem är macke", "macke", "berätta om macke", "vad gör macke"],
-         "responses": ["storyn om macke"]
+         "responses": ["storyn om macke"],
+          "type": "question"
+        },
+        {"tag": "more",
+         "patterns": ["berätta mer", "utveckla", "jag vill veta mer"],
+         "responses": [""],
+         "type": "followup"
         }
   ]
 }

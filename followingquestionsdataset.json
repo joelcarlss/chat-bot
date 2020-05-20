@@ -1,0 +1,9 @@
+{
+  "intents": [
+        {"tag": "more",
+         "patterns": ["berätta mer", "utveckla", "jag vill veta mer"],
+         "responses": ["Hej! Hur kan jag hjälpa dig?", "Hejsan, kan jag vara till hjälp?", "Hej på dig!"],
+         "context_set": ""
+        }
+  ]
+}

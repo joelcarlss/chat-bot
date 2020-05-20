@@ -1,0 +1,9 @@
+{
+  "intents": [
+        {"tag": "time",
+         "patterns": ["hur mycket är klockan?"],
+         "responses": ["Hej! Hur kan jag hjälpa dig?", "Hejsan, kan jag vara till hjälp?", "Hej på dig!"],
+         "context_set": ""
+        }
+  ]
+}

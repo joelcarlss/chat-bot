@@ -15,7 +15,7 @@ stemmer = LancasterStemmer()
 # https://techwithtim.net/tutorials/ai-chatbot/part-1/
 
 
-def get_existing_model():
+def get_existing_data():
     with open('data.pickle', 'rb') as f:
         return pickle.load(f)
 
@@ -69,6 +69,7 @@ def create_trainable_data(data):
 
     with open('data.pickle', 'wb') as f:
         pickle.dump((words, labels, training, output), f)
+    return words, labels, training, output
 
 
 def create_dnn(training, output):
@@ -88,7 +89,7 @@ def run():
     with open('newintents.json') as file:
         data = json.load(file)
 
-    words, labels, training, output = get_existing_model()
+    words, labels, training, output = get_existing_data()
     model = create_dnn(training, output)
     # Comment out load part when training new data
     model.load('model.tflearn')
@@ -99,10 +100,9 @@ def train():
     with open('newintents.json') as file:
         data = json.load(file)
 
-    words, labels, training, output = get_existing_model()
+    words, labels, training, output = create_trainable_data(data)
     model = create_dnn(training, output)
     # Comment out two lines below if not training
-    create_trainable_data(data)
     model.fit(training, output, n_epoch=1000, batch_size=8, show_metric=True)
     model.save('model.tflearn')
 
@@ -122,6 +122,7 @@ def bag_of_words(s, words):
 
 def chat(model, words, labels, data):
     print('Start talking')
+    last_question = ''
     while True:
         inp = input('You: ')
         if inp.lower() == 'quit':
@@ -132,9 +133,13 @@ def chat(model, words, labels, data):
         tag = labels[results_index]
 
         if results[results_index] > 0.6:
-            for tg in data['intents']:
-                if tg['tag'] == tag:
-                    responses = tg['responses']
+            answer = get_answer(data, tag)
+            if answer['type'] == 'followup':
+                responses = handle_followup(data, last_question)
+            else:
+                responses = answer['responses']
+
+            # if tg['type'] == "followup" and  len(last_question) > 0:
 
             print(random.choice(responses))
             if tag.lower() == 'goodbye':
@@ -144,4 +149,21 @@ def chat(model, words, labels, data):
             print('Sorry, try again')
 
 
-train()
+# Iteraties json object to find the correct object
+def get_answer(data, tag):
+    for tg in data['intents']:
+        if tg['tag'] == tag:
+            return tg
+
+
+def handle_followup(data, tag, last_tag):
+    if len(last_tag) > 0:
+        last_answer = get_answer(data, last_tag)
+        if last_answer['followup']:
+            return ['found followup']
+    else:
+        return ['Förlåt vad menar du?']
+
+
+
+run()
