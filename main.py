@@ -134,7 +134,7 @@ def chat(model, words, labels, data):
 
         if results[results_index] > 0.6:
             answer = get_answer(data, tag)
-            if answer['type'] == 'followup':
+            if answer['type'] == 'followup': # TODO: Check that this even works at all
                 responses = handle_followup(data, last_question)
             else:
                 responses = answer['responses']
@@ -149,13 +149,14 @@ def chat(model, words, labels, data):
             print('Sorry, try again')
 
 
-# Iteraties json object to find the correct object
+# Iterates json object to find the correct object
 def get_answer(data, tag):
     for tg in data['intents']:
         if tg['tag'] == tag:
             return tg
 
 
+# Returns the answer from the follow up question TODO: Fix
 def handle_followup(data, tag, last_tag):
     if len(last_tag) > 0:
         last_answer = get_answer(data, last_tag)
@@ -165,5 +166,5 @@ def handle_followup(data, tag, last_tag):
         return ['Förlåt vad menar du?']
 
 
-
-run()
+# run()
+train()
