@@ -167,7 +167,7 @@ def handle_followup(data, tag, last_tag):
                 return last_answer['followup'][tag]
 
         else:
-            return ['Jag har inte så mycket mer att säga om det']
+            return ['Jag har inte så mycket mer att säga om det', 'Det var allt']
 
     return ['Förlåt vad menar du?']
 
