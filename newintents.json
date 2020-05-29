@@ -123,9 +123,27 @@
           "type": "question"
         },
         {"tag": "system",
-         "patterns": ["Vi vill utveckla ett tidsrapporteringssystem", "vi vill bygga en ny sociala medieplattform", "Kan ni utveckla kartor", "vi vill utveckla ett intranät", "kan ni utveckla intranät för företag"],
+         "patterns": ["Vi vill utveckla ett tidsrapporteringssystem", "vi vill bygga en ny sociala medieplattform", "Kan ni utveckla kartor", "vi vill utveckla ett intranät", "kan ni utveckla intranät för företag",
+         "kan ni bygga ett tidsrapporteringssystem till mitt företag", "kan ni bygga fullstacklösningar"],
          "responses": ["Vi gör gärna system och webbaplikationer. Hör av er så kollar vi mer noggrant på vad ni behöver!"],
-          "type": "question"
+          "type": "question",
+          "followup": {
+            "more": ["Vi bygger responsiva system, oftast i JavaScript. Vi har erfarenhet av att bygga system som: sköter tidsrapporter, arbetar med kartor, integrerar andra webbplatser, har säker inloggning, kan använda google och facebook för att logga in. Det var några delar. Vi har erfarenhet av mycket mer än så."]
+          }
+        },
+            {"tag": "fullstack",
+         "patterns": ["full stack", "fullstack", "har ni fullstack utvecklare", "har ni full stack utvecklare", "är ni fullstackutvecklare", "är ni fullstack utvecklare", "vi behöver fullstack utvecklare",
+         "full stack utvecklare", "fullstack utvecklare", "fullstackutvecklare", "är ni full stack utvecklare", "är ni fullstack utvecklare", "är ni fullstackutvecklare",
+         "vi behöver full stack utvecklare", "vi behöver fullstack utvecklare", "vi behöver fullstackutvecklare",
+         "kan ni frontend", "vi behöver frontend utvecklare", "vi söker frontend utvecklare", "har ni kompetens inom frontend", "frontend", "har ni någon som är bra på frontend", "är ni säkra på frontend",
+         "kan ni frontendutveckling", "vi behöver frontendutvecklare", "vi söker frontendutvecklare", "har ni kompetens inom frontendutveckling", "frontendutvecklare", "frontend utvecklare", "har ni någon som är bra på frontendutveckling", "är ni säkra på frontendutveckling",
+         "kan ni backend", "vi behöver backend utvecklare", "vi söker backend utvecklare", "har ni kompetens inom backend", "backend", "har ni någon som är bra på backend", "är ni säkra på backend",
+         "kan ni backendutveckling", "vi behöver backendutvecklare", "vi söker backendutvecklare", "har ni kompetens inom backendutveckling", "backendutvecklare", "backend utvecklare", "har ni någon som är bra på backendutveckling", "är ni säkra på backendutveckling"],
+         "responses": ["Vi är fullstackutvecklare, vi kör helst Javascript på frontend och Node och Python på backend"],
+          "type": "question",
+          "followup": {
+            "more": ["På mobiler använder vi React Native eller Flutter. Vi kan också använda PHP på backend"]
+          }
         },
         {"tag": "pricehour",
          "patterns": ["Vad kostar ni som konsulter", "vad har ni för pris per timme", "vad kostar ni i timmen", "vad kostar ni per timme", "vad tar ni i timmen", "vad tar ni per timme",
@@ -163,7 +181,7 @@
           "type": "question"
         },
         {"tag": "carl",
-         "patterns": ["berätta mer om carl", "vem är carl", "joel", "berätta om carl", "vad gör carl"],
+         "patterns": ["berätta mer om carl", "vem är carl", "carl", "berätta om carl", "vad gör carl"],
          "responses": ["storyn om carl"],
           "type": "question"
         },

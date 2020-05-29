@@ -135,11 +135,11 @@ def chat(model, words, labels, data):
         if results[results_index] > 0.6:
             answer = get_answer(data, tag)
             if answer['type'] == 'followup': # TODO: Check that this even works at all
-                responses = handle_followup(data, last_question)
+                responses = handle_followup(data, answer['tag'], last_question)
             else:
                 responses = answer['responses']
 
-            # if tg['type'] == "followup" and  len(last_question) > 0:
+            last_question = answer['tag']
 
             print(random.choice(responses))
             if tag.lower() == 'goodbye':
@@ -158,13 +158,19 @@ def get_answer(data, tag):
 
 # Returns the answer from the follow up question TODO: Fix
 def handle_followup(data, tag, last_tag):
+    print('last tag: ', last_tag)
+    print('tag: ', tag)
     if len(last_tag) > 0:
         last_answer = get_answer(data, last_tag)
-        if last_answer['followup']:
-            return ['found followup']
-    else:
-        return ['Förlåt vad menar du?']
+        if 'followup' in last_answer:
+            if tag in last_answer['followup']:
+                return last_answer['followup'][tag]
+
+        else:
+            return ['Jag har inte så mycket mer att säga om det']
+
+    return ['Förlåt vad menar du?']
 
 
-# run()
-train()
+# train()
+run()
